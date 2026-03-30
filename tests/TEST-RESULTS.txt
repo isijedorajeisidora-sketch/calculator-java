@@ -1,1 +1,55 @@
+# TEST RESULTS - Calculator
 
+## SYSTEM TESTING (BLACK BOX)
+
+### Basic Operations
+
+| Test case | Expected | Actual | Result |
+|-----------|---------|--------|--------|
+| 2+2       | 4       | 4      | Pass   |
+| 5-3       | 2       | 2      | Pass   |
+| 3*4       | 12      | 12     | Pass   |
+| 8/2       | 4       | 4      | Pass   |
+
+### Operator Priority
+
+| Test case   | Expected | Actual | Result |
+|-------------|---------|--------|--------|
+| 2+3*4       | 14      | 14     | Pass   |
+| (2+3)*4     | 20      | 20     | Pass   |
+| 10/2+7*2   | 19      | 19     | Pass   |
+
+### Negative Numbers
+
+| Test case | Expected | Actual | Result |
+|-----------|---------|--------|--------|
+| -2+5      | 3       | 3      | Pass   |
+| 5*-3      | -15     | -15    | Pass   |
+
+### Decimal Numbers
+
+| Test case | Expected | Actual | Result |
+|-----------|---------|--------|--------|
+| 3.5+2.1  | 5.6     | 5.6    | Pass   |
+| 10.0/4   | 2.5     | 2.5    | Pass   |
+
+### Error Handling
+
+| Test case | Expected | Actual | Result |
+|-----------|---------|--------|--------|
+| 10/0      | Error (division by zero) | Error (division by zero) | Pass |
+| 5++2      | Error (invalid expression) | Error (invalid expression) | Pass |
+| abc+5     | Error (invalid characters) | Error (invalid characters) | Pass |
+| 5+        | Error (missing operand) | Error (missing operand) | Pass |
+
+### Long Expressions
+
+| Test case              | Expected | Actual | Result |
+|------------------------|---------|--------|--------|
+| 1+2-3*4/2+6-5*2+1     | Correct evaluation respecting operator priority | Correct evaluation respecting operator priority | Pass |
+
+## UNIT TESTING
+
+| Test case | Expected | Actual | Result | Notes |
+|-----------|---------|--------|--------|-------|
+| Calculate("2+3*4") | 14 | 14 | Pass | Testira da metoda Calculate pravilno računa izraz sa prioritetom operatora |
